@@ -46,18 +46,17 @@ header {
 }
 
 .logo {
-  background-color: var(--primary);
-  color: white;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
-  font-size: 1.5rem;
-  margin-right: 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.logo img {
+  width: 5px;  /* Adjust size as needed */
+  height: 5px; /* Adjust size as needed */
+  border-radius: 12px; /* Makes the square corners curved */
+  object-fit: cover; /* Ensures the image fills the space properly */
 }
 
 h1 {
