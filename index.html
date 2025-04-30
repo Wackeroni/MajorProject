@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temasek Polytechnic Syllabus Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Load environment variables first -->
+    <script src="env.js"></script>
+    <script>
+        // Fallback if env.js doesn't work
+        window.GEMINI_API_KEY = window.GEMINI_API_KEY || "AIzaSyA3Jyn6Hy7hthRwMYc_NPlFF3TOsUHWl9I";
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <div class="logo">TP</div>
+                <h1>Temasek Polytechnic</h1>
+            </div>
+            <h2>Syllabus Generator 2025-2026</h2>
+        </header>
+
+        <div class="form-container">
+            <div class="form-group">
+                <label for="course">Select Course:</label>
+                <select id="course" required>
+                    <option value="" disabled selected>Choose a course</option>
+                    <!-- Course options will be populated by JavaScript -->
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="year">Select Year:</label>
+                <select id="year" required>
+                    <option value="" disabled selected>Choose a year</option>
+                    <option value="Year 1">Year 1</option>
+                    <option value="Year 2">Year 2</option>
+                    <option value="Year 3">Year 3</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="learning-objectives">What do students need to learn?</label>
+                <textarea id="learning-objectives" rows="4" placeholder="Enter learning objectives, skills, or topics that students need to learn..." required></textarea>
+            </div>
+
+            <button id="generate-btn">Generate Syllabus</button>
+        </div>
+
+        <div class="loading-container">
+            <div class="loading-animation">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+            <p>Generating your syllabus plan...</p>
+        </div>
+
+        <div class="result-container">
+            <h3>Generated Syllabus Plan</h3>
+            <div class="syllabus-content"></div>
+            <button id="download-btn">Download as PDF</button>
+            <button id="new-syllabus-btn">Create New Syllabus</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>Made by: Jayden Parisutham James</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
